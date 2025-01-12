@@ -5,7 +5,6 @@ function doorChecking(doorNum){
         console.log(`A bucket of cold water splashes on you! Unlucky Pen4o!`);
     } else {
         console.log("Invalid choice. Please select Door 1, 2, or 3.");
-        
     }
 }
 doorChecking()
