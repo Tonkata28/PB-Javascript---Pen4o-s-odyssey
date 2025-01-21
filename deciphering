@@ -1,0 +1,26 @@
+function deciphering(code) {
+  const swappedString = code.split("").map(function (char) {
+    if (/[A-Z]/.test(char)) {
+
+      return char.toLowerCase();
+
+    } else if (/[a-z]/.test(char)) {
+
+      return char.toUpperCase();
+    } else {
+      return char;
+    }
+  }).join("");
+
+  console.log(swappedString);
+  const power = swappedString
+    .match(/\d+/g) // Find all sequences of digits (numbers)
+    .map(Number) // Convert each found number to a number
+    .reduce((acc, num) => acc + num, 0); // Sum all the numbers
+  if (power > 20) {
+    console.log(`The map reveals the your next location! Total power: ${power}`);
+  } else {
+    console.log(`The map warns of danger! Total power: ${power}`);
+
+  }
+}
